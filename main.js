@@ -35,23 +35,35 @@
   updateCurve(0);
 })();
 
-
+  feather.replace()
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("menu");
+const hamburger = document.querySelector(".hamburger");
+const menu = document.getElementById("menu");
+const blurBg = document.getElementById("blur-bg");
 
-  // open/close menu
-  hamburger.addEventListener("click", () => {
-    menu.classList.toggle("active");
+hamburger.addEventListener("click", () => {
+  menu.classList.toggle("active");
+
+  if (menu.classList.contains("active")) {
+    blurBg.style.display = "block";  // show blur
+  } else {
+    blurBg.style.display = "none";   // hide blur
+  }
+
+
   });
 
   // close menu on scroll
   window.addEventListener("scroll", () => {
     menu.classList.remove("active");
+     blurBg.style.display = "none";   // hide blur
   });
+
 });
+
+
 
 
