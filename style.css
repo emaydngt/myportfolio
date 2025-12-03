@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 
 
+
 *,
 *::after,
 *::before {
@@ -8,6 +9,10 @@
   padding: 0;
 }
 
+body, head{
+  overflow-x: hidden;
+  width: 100%;
+}
 
 .blur-bg {
   position: fixed;
@@ -17,7 +22,7 @@
   height: 100%;
   backdrop-filter: blur(4px);
   background: rgba(0, 0, 0, 0.2);
-  z-index: 900;     /* BELOW the menu */
+  z-index: 900;
   display: none;
 }
 
@@ -64,7 +69,7 @@ header h1 {
 header h3 {
   font-size: clamp(16px, 3vw, 28px);
   font-weight: 300;
-} 
+}
 
 
 
@@ -75,7 +80,8 @@ header {
   text-align: center;
 }
 
-main {
+
+#main2 {
   background: linear-gradient(to bottom, #ffffff 0%, #dddee1 100%);
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   padding: 10vh 0 80vh;
@@ -84,7 +90,7 @@ main {
   overflow: hidden;
 }
 
-main::after {
+#main2::after {
   border-right: 2px dashed #eee;
   content: '';
   position: absolute;
@@ -111,7 +117,7 @@ small a {
   color: inherit;
 }
 
-.logo{
+.logo {
   color: #ffffff;
 }
 
@@ -132,31 +138,10 @@ small a {
   cursor: pointer;
 }
 
-#container {
-  display: flex;
-  align-items: center; /* vertically align */
-  gap: 20px; 
-  padding: 20px;
-  background-color: #ffffff;
-  bottom: 100px;
-  
-}
-
-#container p {
-  text-align: center;
-  color: #808080;
-  font-size: 30px;
-}
-
-#container img {
-  width: 350px;
-  height: auto;
-}
-
 .menu {
   display: flex;
-  justify-content: center;  /* center menu items */
-  gap: 20px;                /* consistent gap */
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
@@ -164,22 +149,23 @@ small a {
 }
 
 .menu li {
-  flex: 0 1 auto;           /* auto width, don't force full stretch */
+  flex: 0 1 auto;
   text-align: center;
 }
 
 .menu a {
   color: #ffffff;
   text-decoration: none;
-  padding: 8px 15px;        /* smaller padding for small screens */
+  padding: 8px 15px;
   background-color: gray;
   border-radius: 3px;
   transition: background 0.3s, color 0.3s;
- 
+
 }
 
-.icon{
-  
+
+
+.icon {
   display: none;
   width: 30px;
 }
@@ -189,30 +175,98 @@ small a {
 .menu a:active {
   background-color: #333333;
   color: rgb(255, 255, 255);
+
+}
+
+
+#container1 {
+  display: flex;
+  align-items: center;       
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 100vh;             
+  gap: 20px;                 
+  flex-wrap: nowrap;         
+}
+
+
+#article1 {
+  flex: 1 1 50%;             
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: right;
+}
+
+#article1 p {
+  font-size: clamp(16px, 4vw, 30px);
+  line-height: 1.5;
+}
+
+
+aside {
+  flex: 1 1 40%;             
+  display: flex;
+  justify-content: flex-end; 
+}
+
+#image {
+  width: 100%;
+  max-width: 400px;          
+  height: auto;
+  border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+  #container1 {
+    height: auto;            
+  }
+
+  #article1 p {
+    font-size: clamp(14px, 3vw, 20px);
+  }
+
+  #image {
+    max-width: 200px;        
+  }
+}
+
+@media (max-width: 480px) {
+  #article1 p {
+    font-size: 0.9rem;
+  }
+
+  #image {
+    max-width: 120px;        
+  }
 }
 
 
 @media (max-width:600px) {
 
-  .icontext{
+  .icontext {
     display: none;
   }
-  .icon{
+
+  .icon {
     display: block;
   }
+
   .svg-container {
     height: 300px;
   }
 
   .hamburger {
     display: block;
+    z-index: 1001;
   }
 
   .menu {
-    
+
     position: fixed;
     top: 10px;
-    left: -350px;       
+    left: -350px;
     background: #fffbfb00;
     flex-direction: column;
     padding: 40px;
@@ -223,33 +277,33 @@ small a {
   }
 
   .menu a:hover,
-.menu a:focus,
-.menu a:active {
-  background-color: #c4c4c4;
-  color: rgb(0, 0, 0);
-  z-index: 1001;
-}
+  .menu a:focus,
+  .menu a:active {
+    background-color: #c4c4c4;
+    color: rgb(0, 0, 0);
+    z-index: 1001;
+  }
 
-.menu li {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;      /* optional so you can see squares */
-  border-radius: 10%;
-  z-index: 1001;
-}
+  .menu li {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    z-index: 1001;
+  }
 
   .menu.active {
     left: -25px;
   }
 
   header h1 {
-  font-size: clamp(30px, 6vw, 50px);
-}
+    font-size: clamp(30px, 6vw, 50px);
+  }
 
-header h3 {
-  font-size: clamp(22px, 3vw, 28px);
-} 
+  header h3 {
+    font-size: clamp(22px, 3vw, 28px);
+  }
 
   .menu a {
     padding: 8px 10px;
