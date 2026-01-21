@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+head {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.blur-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 900;
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+svg path {
+  transition: .1s;
+}
+
+svg:hover path {
+  d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
+}
+
+body {
+  background: #fff;
+  color: #333;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+}
+
+header h1 {
+  font-size: clamp(28px, 6vw, 50px);
+  font-weight: 600;
+}
+
+header h3 {
+  font-size: clamp(16px, 3vw, 28px);
+  font-weight: 300;
+}
+
+header {
+  color: #fff;
+  padding-top: 10vw;
+  padding-bottom: 30vw;
+  text-align: center;
+}
+
+#main2 {
+  background: linear-gradient(to bottom, #ffffff 0%, #dddee1 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  padding: 10vh 0 80vh;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+#main2::after {
+  border-right: 2px dashed #eee;
+  content: '';
+  position: absolute;
+  top: calc(10vh + 1.618em);
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+}
+
+footer {
+  background: #dddee1;
+  padding: 5vh 0;
+  text-align: center;
+  position: relative;
+}
+
+small {
+  opacity: .5;
+  font-weight: 300;
+}
+
+small a {
+  color: inherit;
+}
+
+.logo {
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  z-index: 10;
+}
+
+.hamburger {
+  width: 30px;
+  display: none;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 15px;
+  background-color: gray;
+  border-radius: 3px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.icon {
+  display: none;
+  width: 30px;
+}
+
+.menu a:hover,
+.menu a:focus,
+.menu a:active {
+  background-color: #333333;
+  color: rgb(255, 255, 255);
+}
+
+#article1 p {
+  font-size: clamp(16px, 4vw, 30px);
+  line-height: 1.5;
+
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+#container1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 100vh;
+  flex-wrap: nowrap;
+}
+
+#article1 {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: right;
+}
+
+aside {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.show p {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.show #image {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+@media (max-width: 768px) {
+  #article1 p {
+    font-size: clamp(14px, 3vw, 20px);
+  }
+
+  #image {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  #article1 p {
+    font-size: 0.9rem;
+  }
+
+  #image {
+    max-width: 120px;
+  }
+}
+
+@media (max-width:600px) {
+  .icontext {
+    display: none;
+  }
+
+#container1 {
+  margin-top: -250px;  /* adjust as you want */
+}
+
+#article1 p {
+
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+
+#image {
+
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+
+  .icon {
+    display: block;
+  }
+
+  .svg-container {
+    height: 300px;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
+
+  .menu {
+    position: fixed;
+    top: 10px;
+    left: -350px;
+    background: #fffbfb00;
+    flex-direction: column;
+    padding: 40px;
+    gap: 20px;
+    transition: left 0.3s ease;
+    z-index: 1001;
+    border-radius: 10px;
+  }
+
+  .menu a:hover,
+  .menu a:focus,
+  .menu a:active {
+    background-color: #c4c4c4;
+    color: rgb(0, 0, 0);
+    z-index: 1001;
+  }
+
+  .menu li {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    z-index: 1001;
+  }
+
+  .menu.active {
+    left: -25px;
+  }
+
+  header h1 {
+    font-size: clamp(30px, 6vw, 50px);
+  }
+
+  header h3 {
+    font-size: clamp(22px, 3vw, 28px);
+  }
+
+  .menu a {
+    padding: 8px 10px;
+    border-radius: 100%;
+    background: rgb(143, 143, 143);
+    color: rgb(255, 255, 255);
+  }
+}
+
+/* Skill section container */
+#skills {
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;  
+  text-align: left;
+}
+
+#skills h2 {
+  font-size: 28px;
+  text-align: center;
+}
+
+/* Individual skill */
+.skill {
+  margin-bottom: 10px;
+}
+
+.skill span {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Skill bar background */
+.skill-bar {
+  width: 100%;
+  height: 14px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Skill fill */
+.skill-level {
+  height: 100%;
+  background:rgb(143, 143, 143); /* green */
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+@media (max-width: 600px) {
+
+  #skills {
+    width: 80%;
+  }
+
+  #skills h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .skill span {
+    font-size: 16px;
+  }
+
+  .skill-bar {
+    height: 10px; /* mas maliit sa mobile */
+    border-radius: 6px;
+  }
+
+  .skill-level {
+    border-radius: 6px;
+  }
+}
+
+/* EXTRA SMALL DEVICES (around 320px - 400px wide) */
+@media (max-width: 400px) {
+
+  #skills h2 {
+    font-size: 20px;
+  }
+
+  .skill span {
+    font-size: 14px;
+  }
+
+  .skill-bar {
+    height: 8px;
+  }
+}
