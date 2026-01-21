@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 
-
-
 *,
 *::after,
 *::before {
@@ -9,7 +7,8 @@
   padding: 0;
 }
 
-body, head{
+body,
+head {
   overflow-x: hidden;
   width: 100%;
 }
@@ -71,15 +70,12 @@ header h3 {
   font-weight: 300;
 }
 
-
-
 header {
   color: #fff;
   padding-top: 10vw;
   padding-bottom: 30vw;
   text-align: center;
 }
-
 
 #main2 {
   background: linear-gradient(to bottom, #ffffff 0%, #dddee1 100%);
@@ -121,8 +117,6 @@ small a {
   color: #ffffff;
 }
 
-
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -160,10 +154,7 @@ small a {
   background-color: gray;
   border-radius: 3px;
   transition: background 0.3s, color 0.3s;
-
 }
-
-
 
 .icon {
   display: none;
@@ -175,60 +166,66 @@ small a {
 .menu a:active {
   background-color: #333333;
   color: rgb(255, 255, 255);
-
 }
 
+#article1 p {
+  font-size: clamp(16px, 4vw, 30px);
+  line-height: 1.5;
+
+  opacity: 0;
+  transform: translateX(-100px);
+}
 
 #container1 {
   display: flex;
-  align-items: center;       
+  align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  height: 100vh;             
-  gap: 20px;                 
-  flex-wrap: nowrap;         
+  height: 100vh;
+  flex-wrap: nowrap;
 }
 
-
 #article1 {
-  flex: 1 1 50%;             
+  flex: 1 1 50%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   text-align: right;
 }
 
-#article1 p {
-  font-size: clamp(16px, 4vw, 30px);
-  line-height: 1.5;
-}
-
-
 aside {
-  flex: 1 1 40%;             
+  flex: 1 1 40%;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 
 #image {
   width: 100%;
-  max-width: 400px;          
+  max-width: 400px;
   height: auto;
   border-radius: 10px;
+
+  opacity: 0;
+  transform: translateX(100px);
 }
 
+.show p {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.show #image {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
 
 @media (max-width: 768px) {
-  #container1 {
-    height: auto;            
-  }
-
   #article1 p {
     font-size: clamp(14px, 3vw, 20px);
   }
 
   #image {
-    max-width: 200px;        
+    max-width: 200px;
   }
 }
 
@@ -238,16 +235,32 @@ aside {
   }
 
   #image {
-    max-width: 120px;        
+    max-width: 120px;
   }
 }
 
-
 @media (max-width:600px) {
-
   .icontext {
     display: none;
   }
+
+#container1 {
+  margin-top: -250px;  /* adjust as you want */
+}
+
+#article1 p {
+
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+
+#image {
+
+  opacity: 0;
+  transform: translateX(100px);
+}
+
 
   .icon {
     display: block;
@@ -263,7 +276,6 @@ aside {
   }
 
   .menu {
-
     position: fixed;
     top: 10px;
     left: -350px;
@@ -311,5 +323,87 @@ aside {
     background: rgb(143, 143, 143);
     color: rgb(255, 255, 255);
   }
+}
 
+/* Skill section container */
+#skills {
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;  
+  text-align: left;
+}
+
+#skills h2 {
+  font-size: 28px;
+  text-align: center;
+}
+
+/* Individual skill */
+.skill {
+  margin-bottom: 10px;
+}
+
+.skill span {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Skill bar background */
+.skill-bar {
+  width: 100%;
+  height: 14px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Skill fill */
+.skill-level {
+  height: 100%;
+  background:rgb(143, 143, 143); /* green */
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+@media (max-width: 600px) {
+
+  #skills {
+    width: 80%;
+  }
+
+  #skills h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .skill span {
+    font-size: 16px;
+  }
+
+  .skill-bar {
+    height: 10px; /* mas maliit sa mobile */
+    border-radius: 6px;
+  }
+
+  .skill-level {
+    border-radius: 6px;
+  }
+}
+
+/* EXTRA SMALL DEVICES (around 320px - 400px wide) */
+@media (max-width: 400px) {
+
+  #skills h2 {
+    font-size: 20px;
+  }
+
+  .skill span {
+    font-size: 14px;
+  }
+
+  .skill-bar {
+    height: 8px;
+  }
 }
