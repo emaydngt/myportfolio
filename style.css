@@ -164,8 +164,8 @@ small a {
 .menu a:hover,
 .menu a:focus,
 .menu a:active {
-  background-color: #333333;
-  color: rgb(255, 255, 255);
+  background-color: #ffffff;
+  color: gray;
 }
 
 #article1 p {
