@@ -9,40 +9,81 @@
 </head>
 
 <body>
-  <!-- SVG Background -->
   <div class="svg-container">
     <svg viewBox="0 0 800 400" preserveAspectRatio="none">
       <path id="curve" fill="#808080"></path>
     </svg>
   </div>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">MySite</div>
-<!---->
-    <!-- Hamburger -->
+
     <img src="imgs/menu.png" class="hamburger" id="hamburger" alt="menu">
 
-    <!-- Sidebar Menu -->
-      <div class="blur-bg" id="blur-bg"></div>
+    <div class="blur-bg" id="blur-bg"></div>
     <ul class="menu" id="menu">
-      <li><a href="#"> <img src="imgs/home.png" alt="Home icon" class="icon"> <span class="icontext">Home</span></a></li>
-      <li><a href="#"> <img src="imgs/about.png" alt="About icon" class="icon"> <span class="icontext">About</span></a></li>
-      <li><a href="#"> <img src="imgs/services.png" alt="Services icon" class="icon"> <span class="icontext">Services</span></a></li>
-      <li><a href="#"> <img src="imgs/phone.png" alt="Phone icon" class="icon"> <span class="icontext">Contact</span></a></li>
+      <li><a href="#"> <img src="imgs/home.png" alt="Home icon" class="icon"> <span class="icontext">Home</span></a>
+      </li>
+      <li><a href="#"> <img src="imgs/about.png" alt="About icon" class="icon"> <span class="icontext">About</span></a>
+      </li>
+      <li><a href="#"> <img src="imgs/services.png" alt="Services icon" class="icon"> <span
+            class="icontext">Services</span></a></li>
+      <li><a href="#"> <img src="imgs/phone.png" alt="Phone icon" class="icon"> <span
+            class="icontext">Contact</span></a></li>
     </ul>
   </nav>
 
-  <!-- Page content -->
   <header>
     <h1>Hi, I’m Emay Dangate</h1>
     <h3>and I want to be a game developer.</h3>
   </header>
-  <div id="container">
-    <p>I am currently taking Bachelor of Science in Information Systems (BSIS) course that builds my skills in technology, business, and system development.</p>
-  <img src="imgs/me.png" alt="Me">
-</div>
-  <main>
+  <section id="container1">
+    <article id="article1">
+
+    <p>I am currently taking Bachelor of Science in Information Systems (BSIS) course that builds my skills in
+      technology, business, and system development.</p>
+
+    </article>
+    <aside><img src="imgs/me.jpeg" alt="Me" id="image"></aside>
+
+  </section>
+
+  <!-- SKILL BARS SECTION -->
+<section id="skills">
+  <h2>My Skills</h2>
+
+  <div class="skill">
+    <span>matulog</span>
+    <div class="skill-bar">
+      <div class="skill-level" style="width: 90%"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <span>kumain</span>
+    <div class="skill-bar">
+      <div class="skill-level" style="width: 80%"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <span>umiyak</span>
+    <div class="skill-bar">
+      <div class="skill-level" style="width: 60%"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <span>Game Dev (Godot)</span>
+    <div class="skill-bar">
+      <div class="skill-level" style="width: 40%"></div>
+    </div>
+  </div>
+
+</section>
+
+
+  <main id="main2">
     <p>And the main section.</p>
   </main>
 
@@ -51,11 +92,9 @@
     <small>🕷 Wish you luck</small>
   </footer>
 
-  <!-- Feather icons -->
   <script src="https://unpkg.com/feather-icons"></script>
 
-  <!-- Main JS -->
-  <script src="main.js"> feather.replace();</script>
+  <script src="main.js"></script>
 </body>
 
 </html>
