@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>janevent.com</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            height: 100vh;
+
+        }
+
+        .bgoverlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background: radial-gradient(#10130c, #000000 90%);
+            opacity: 0.7;
+            z-index: 0;
+
+        }
+
+
+
+        .container {
+            display: grid;
+            min-height: 100vh;
+            grid-template-rows: 10fr 90fr;
+            grid-template-areas: "header"
+                "main";
+
+            background-image: url(bg/bg2.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
+
+        .container h6 {
+            font-family: Georgia, serif;
+            font-size: 3em;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+
+
+        }
+
+        .container p {
+            font-size: 0.2;
+
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+
+        }
+
+        .container header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container main {
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .effect {
+            text-shadow: #000000 0px 0px 5px, #000000 0px 0px 10px, #000000 0px 0px 15px, #000000 0px 0px 20px, #000000 0px 0px 30px, #000000 0px 0px 40px, #000000 0px 0px 50px, #000000 0px 0px 75px;
+            color: #FFFFFF;
+        }
+
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .container nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+
+
+        .container a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            border-radius: 3px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            transition: ease-in-out 0.2s;
+        }
+
+        .container a:hover {
+            color: black;
+        }
+
+        .links {
+            display: flex;
+            gap: 30px;
+            justify-content: flex-end;
+            width: 100%;
+            height: 40px;
+        }
+
+
+
+        .container2 {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "left right";
+        }
+
+        #left,
+        #right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .img1 {
+
+            background-image: url(img/img.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: -200px;
+        }
+
+
+        .img1,
+        #right div {
+            height: 90vh;
+            width: 45vw;
+            border-radius: 20px;
+        }
+
+        #right {
+            grid-area: right;
+        }
+
+        #left {
+            grid-area: left;
+        }
+
+
+        #right div div {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .container2 h6 {
+            font-size: 30px;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+
+        .container2 h4 {
+            font-size: 60px;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+
+        .container2 p {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+            color: #000000;
+        }
+
+        .container3 {
+            height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "c1 c2"
+                "f f";
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 50fr 50fr;
+        }
+
+        .containerlist1,
+        .containerlist2 {
+            background-color: #2f3825;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .containerlist1 {
+            grid-area: c1;
+        }
+
+        .containerlist2 {
+            grid-area: c2;
+        }
+
+        .containerlist1 div,
+        .containerlist2 div {
+            height: 40vh;
+            width: 45vw;
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container3 p {
+            font-family: Georgia, serif;
+            font-size: 1em;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+            color: #000000;
+        }
+
+        .container3 h6 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+
+        .boxcontainer img {
+            height: 80px;
+        }
+
+
+
+        .container3 footer {
+            grid-area: f;
+            background-color: white;
+            padding: 30px;
+        }
+
+        .containerfooter {
+
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .boxcontainer {
+            grid-template-areas: "box1 box2 box3 box4";
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 80%;
+            width: 100%;
+            gap: 10px;
+
+        }
+
+
+        .boxcontainer>div {
+            border: 1px solid gray;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+
+        }
+
+        .boxcontainer h5 {
+            font-size: 20px;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+
+        .boxcontainer p {
+            font-family: Georgia, serif;
+            font-size: 1em;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+            color: #000000;
+        }
+
+
+
+        /* note need siguro line design */
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .container4 {
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "main"
+                "footerr"
+                "footerrr";
+            grid-template-rows: 65fr 30fr 5fr;
+
+            background-image: url(bg/bg3.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container4 main {
+            grid-area: main;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .container4 main div {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .container4 main h6 {
+            font-family: Georgia, serif;
+            font-size: 3em;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .container4 main p {
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .container4 main a {
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: #2f3825;
+        }
+
+        .container4 main a:hover {
+            background-color: #10130c;
+        }
+
+        .container4 footer {
+            grid-area: footerr;
+            background-color: #2f382554;
+            backdrop-filter: blur(4px);
+        }
+
+        .fcontainer {
+            display: grid;
+            grid-template-areas: "f1 f2 f3 f4";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 100%;
+        }
+
+        .fcontainer>div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .f1 {
+            justify-content: space-evenly;
+        }
+
+        .f2 {
+            justify-content: space-between;
+        }
+
+        .f3 {
+            justify-content: space-between;
+        }
+
+        .f4 {
+            justify-content: space-between;
+        }
+
+        .fcontainer p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+        }
+
+
+
+        .fcontainer h6 {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .fcontainer a {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+
+        }
+
+
+
+
+
+
+
+
+        .pinakafooter {
+            grid-area: footerrr;
+            background-color: #10130c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pinakafooter p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+
+        @media (max-width: 970px) {
+
+            /* container 2 responsive */
+            .container2 {
+                max-height: 100vh;
+                grid-template-rows: 1fr 1fr;
+                grid-template-areas:
+                    "left"
+                    "right";
+
+            }
+
+            .container2 h6 {
+                font-size: 20px;
+
+            }
+
+            .container2 h4 {
+                font-size: 35px;
+                letter-spacing: 2px;
+                word-spacing: 5px;
+            }
+
+            .container2 p {
+                font-family: Georgia, serif;
+                font-size: 15px;
+                letter-spacing: 2px;
+                word-spacing: 5px;
+                color: #000000;
+            }
+
+            .img1 {
+                height: auto;
+                width: 100%;
+
+
+                background-image: url(img/img.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position-x: 0;
+            }
+
+            #right div {
+                height: 50vh;
+                width: 100vw;
+                border-radius: 20px;
+            }
+
+            /* responsive container 2 end */
+
+
+
+            .img1 {
+                height: 40vh;
+                width: 90%;
+            }
+
+
+            .container4 {
+                display: grid;
+                grid-template-areas:
+                    "main"
+                    "footerr"
+                    "footerrr";
+                grid-template-rows: 70fr 25fr 5fr;
+            }
+
+
+        }
+
+        @media (max-width: 800px) {
+            .fcontainer {
+                display: grid;
+                grid-template-areas: "f2 f3 f4";
+                grid-template-columns: 0 1fr 1fr 1fr;
+                height: 100%;
+            }
+
+            .f1 {
+                display: none;
+            }
+
+            .f1 img {
+                display: none;
+            }
+
+            .f1 p {
+                display: none;
+            }
+
+            .f4 {
+                justify-content: space-between;
+            }
+
+
+        }
+
+
+
+        @media (max-width: 700px) {
+
+            /* responsive ni container number 3 */
+
+            .container3 {
+                height: 150vh;
+                display: grid;
+                grid-template-areas:
+                    "c1"
+                    "c2"
+                    "f";
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+
+            .containerlist1 div,
+            .containerlist2 div {
+                width: 80vw;
+            }
+
+            .boxcontainer {
+                grid-template-areas:
+                    "box1 box2"
+                    "box3 box4";
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+
+            }
+
+            .container3 footer {
+                grid-area: f;
+                background-color: white;
+                padding: 0 10px;
+            }
+
+            .boxcontainer img {
+                height: 30px;
+            }
+
+            .boxcontainer h5 {
+                font-size: 17px;
+            }
+
+            .boxcontainer p {
+                font-size: 13px;
+            }
+
+            .boxcontainer>div {
+                padding: 10px;
+            }
+
+            /* responsive end  */
+
+        }
+
+
+
+        @media (max-width: 600px) {
+
+            .links {
+                display: flex;
+                justify-content: center;
+                gap: 5%;
+            }
+
+            .logo {
+                display: none;
+            }
+
+
+
+
+
+
+            .fcontainer {
+                display: grid;
+                grid-template-areas: "f3 f4";
+                grid-template-columns: 0 0 1fr 1fr;
+                height: 100%;
+            }
+
+            .f2 h6 {
+                display: none;
+
+            }
+
+            .f2 a {
+
+                display: none;
+            }
+
+
+
+            .pinakafooter p {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 470px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+            .container h6 {
+                font-size: 2em;
+            }
+
+            .container p {
+                font-size: 13px;
+            }
+
+
+            .container a {
+                font-size: 15px;
+            }
+
+            .links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+
+
+
+
+
+            .img1 {
+                height: 40vh;
+                width: 90%;
+            }
+
+
+            .container2 p {
+                font-size: 14px;
+            }
+
+            .container2 h6 {
+                font-size: 25px;
+            }
+
+            .container2 h4 {
+                font-size: 30px;
+            }
+
+
+
+
+
+
+            .container4 main h6 {
+                font-size: 1.5em;
+
+            }
+
+            .container4 main p {
+                font-size: 13px;
+            }
+
+            .container4 main a {
+                font-size: 15px;
+                padding: 20px;
+            }
+
+
+            .container4 footer p,
+            .container4 footer a {
+                font-size: 10px;
+            }
+
+            .container4 {
+                display: grid;
+                grid-template-areas:
+                    "main"
+                    "footerr"
+                    "footerrr";
+                grid-template-rows: 65fr 30fr 5fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="bgoverlay"></div>
+        <header>
+            <nav>
+                <div><img class="logo" src="logo.png" alt="logo"></div>
+                <div class="links">
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="content.html">Content</a>
+                    <a href="booknow.html">Book now</a>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div style="height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
+                <div style="padding: 0 11vw; text-align: center; display: flex; align-items: center; flex-direction: column;"
+                    class="effect">
+                    <h6>About Janevent</h6>
+                    <p>Creating unforgettable moments in the perfect place</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="container2">
+        <div id="left">
+            <div class="img1"></div>
+        </div>
+        <div id="right">
+            <div style="padding: 30px;">
+                <div>
+                    <h6>Our story</h6>
+                    <h4>Where Moments Become Memories</h4>
+                    <p>Janevent is a prettier event venue dedicated to making every celebration truly special. From
+                        intimate to gatherings to grand celebration, our beautiful space and exceptional service ensure
+                        an
+                        experience you and your guests will never forget.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container3">
+
+        <div class="containerlist1">
+            <div>
+                <img height="100px" src="icon/mission.png" alt="mission">
+                <h6>Our Mission</h6>
+                <p>To provide stunning venue and exceptional service that turns every event into a memorable experience.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="containerlist2">
+            <div>
+                <img height="100px" src="icon/vision.png" alt="vision">
+                <h6>Our Vision</h6>
+                <p>To be the most trusted event venue known for beauty, Excellence, and unforgettable celebrations. </p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="containerfooter">
+                <header>
+                    <h6>WHY CHOOSE US?</h6>
+                </header>
+                <div class="boxcontainer">
+                    <div class="box1">
+                        <div>
+                            <img src="icon/staff.png" alt="experience staff">
+                            <h5>Experienced Staff</h5>
+                            <p>Professional and dedicated team</p>
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <div>
+                            <img src="icon/venue.png" alt="beautiful venue">
+                            <h5>Beautiful Venue</h5>
+                            <p>Scenic and elegant surroundings</p>
+                        </div>
+                    </div>
+                    <div class="box3">
+                        <div>
+                            <img src="icon/pakages.png" alt="ALL IN ONE HAHAHAH">
+                            <h5>Flexible Packages</h5>
+                            <p>Option that fit every need budget </p>
+                        </div>
+                    </div>
+                    <div class="box4">
+                        <div>
+                            <img src="icon/fair.png" alt="fair prices and quality">
+                            <h5>Affordable Pricing</h5>
+                            <p>Quality service at pair prices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+
+
+
+    <div class="container4">
+        <main>
+            <div class="effect">
+                <h6>
+                    Let's Make Your Next Event Unforgettable
+                </h6>
+                <p>Book your date with us today and create memories that last a Lifetime</p>
+                <a href="book.html">BOOK NOW</a>
+            </div>
+        </main>
+        <footer>
+            <div class="fcontainer">
+                <div class="f1">
+                    <img src="logo.png" alt="logo">
+                    <p>The Perfect Place for your
+                        Special Moments.</p>
+                </div>
+                <div class="f2">
+                    <h6>Quick links</h6>
+                    <a href="">Home</a>
+                    <a href="">About</a>
+                    <a href="">Content</a>
+                    <a href="">Book now</a>
+
+                </div>
+                <div class="f3">
+                    <h6>Contact</h6>
+                    <p>+63 912 345 6789</p>
+                    <p>Janevent@gmail.com</p>
+                    <p>Brgy, Cainta, Rizal, Philippines.</p>
+                </div>
+                <div class="f4">
+                    <h6>Follow us</h6>
+                    <a href="facebook">Ficon</a>
+                    <a href="Ig">IGicon</a>
+                    <a href="Tiktok">Ticon</a>
+                </div>
+            </div>
+        </footer>
+        <div class="pinakafooter">
+            <p>&copy; 2026 Janevent. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
